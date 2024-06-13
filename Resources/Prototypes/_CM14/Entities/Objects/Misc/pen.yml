@@ -18,6 +18,15 @@
   id: CMPenClicky # todo CM14 make it clicky
   name: WY pen
   description: It's a WY brand extra clicky black ink pen.
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      collection: Skub
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: Skub
+  - type: UseDelay
+    delay: 0.5
 
 - type: entity
   parent: CMPen
