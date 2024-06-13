@@ -19,14 +19,23 @@
   name: WY pen
   description: It's a WY brand extra clicky black ink pen.
   components:
-  - type: EmitSoundOnUse
-    sound:
-      collection: Skub
-  - type: EmitSoundOnTrigger
-    sound:
-      collection: Skub
-  - type: UseDelay
-    delay: 0.5
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/stunprod.rsi
+    layers:
+    - state: stunprod_off
+      map: [ "enum.ToggleVisuals.Layer" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: {state: stunprod_on}
 
 - type: entity
   parent: CMPen
